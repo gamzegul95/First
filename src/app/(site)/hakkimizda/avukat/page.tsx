@@ -48,7 +48,7 @@ export default async function LawyerProfilePage() {
               <ProfilePhoto
                 photoUrl={lawyer.photoUrl}
                 name={lawyer.name}
-                className="aspect-[4/5] w-full max-w-sm rounded-[3px] border border-gold-900/50"
+                className="mx-auto aspect-[4/5] w-full max-w-sm rounded-[3px] border border-gold-900/50"
               />
               <div className="mt-10 max-w-2xl space-y-5 text-base leading-relaxed text-stone-300">
                 {paragraphs.map((p, i) => (

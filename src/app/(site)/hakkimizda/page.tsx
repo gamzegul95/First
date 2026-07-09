@@ -46,7 +46,7 @@ export default async function AboutPage() {
           <Reveal>
             <Link
               href="/hakkimizda/avukat"
-              className="group grid gap-8 overflow-hidden rounded-[3px] border border-gold-900/50 bg-gradient-to-b from-ink-900/70 to-ink-900/20 p-8 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-600/40 sm:grid-cols-[10rem_1fr] sm:items-center sm:p-10"
+              className="group flex flex-col items-center gap-8 overflow-hidden rounded-[3px] border border-gold-900/50 bg-gradient-to-b from-ink-900/70 to-ink-900/20 p-8 text-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-gold-600/40 sm:flex-row sm:justify-center sm:p-10 sm:text-left"
             >
               <ProfilePhoto
                 photoUrl={lawyer.photoUrl}
