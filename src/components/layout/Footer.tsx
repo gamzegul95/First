@@ -71,6 +71,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
               <li><Link href="/hizmetler" className="hover:text-gold-200 transition-colors">Çalışma Alanlarımız</Link></li>
               <li><Link href="/makaleler" className="hover:text-gold-200 transition-colors">Makaleler ve Güncel Bilgiler</Link></li>
               <li><Link href="/iletisim" className="hover:text-gold-200 transition-colors">İletişim</Link></li>
+              <li><Link href="/gizlilik-ve-cerez-politikasi" className="hover:text-gold-200 transition-colors">Gizlilik ve Çerez Politikası</Link></li>
             </ul>
           </div>
 

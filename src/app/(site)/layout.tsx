@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CookieConsent from "@/components/ui/CookieConsentLoader";
 import JsonLd from "@/components/seo/JsonLd";
 import { getSiteSettings } from "@/lib/data";
 import { SITE_URL } from "@/lib/site";
@@ -92,6 +93,7 @@ export default async function RootLayout({
         <Navbar settings={settings} />
         <main className="flex-1">{children}</main>
         <Footer settings={settings} />
+        <CookieConsent />
       </body>
     </html>
   );
