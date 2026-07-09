@@ -42,6 +42,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                   href={settings.linkedin}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="LinkedIn'de takip edin"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-border text-gold-300 transition-colors hover:border-gold-500 hover:text-gold-100"
                 >
                   <LinkedinIcon className="h-4 w-4" />
@@ -52,6 +53,7 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
                   href={settings.instagram}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Instagram'da takip edin"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-border text-gold-300 transition-colors hover:border-gold-500 hover:text-gold-100"
                 >
                   <InstagramIcon className="h-4 w-4" />
@@ -61,9 +63,9 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           </div>
 
           <div>
-            <h4 className="font-display text-sm tracking-[0.2em] text-gold-300">
+            <h2 className="font-display text-sm tracking-[0.2em] text-gold-300">
               KURUMSAL
-            </h4>
+            </h2>
             <ul className="mt-5 space-y-3 text-sm text-stone-400">
               <li><Link href="/hakkimizda" className="hover:text-gold-200 transition-colors">Hakkımızda</Link></li>
               <li><Link href="/hizmetler" className="hover:text-gold-200 transition-colors">Çalışma Alanlarımız</Link></li>
@@ -73,9 +75,9 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           </div>
 
           <div>
-            <h4 className="font-display text-sm tracking-[0.2em] text-gold-300">
+            <h2 className="font-display text-sm tracking-[0.2em] text-gold-300">
               ÇALIŞMA ALANLARI
-            </h4>
+            </h2>
             <ul className="mt-5 space-y-3 text-sm text-stone-400">
               <li><Link href="/hizmetler/sirketler-hukuku" className="hover:text-gold-200 transition-colors">Şirketler Hukuku</Link></li>
               <li><Link href="/hizmetler/ticaret-hukuku" className="hover:text-gold-200 transition-colors">Ticaret Hukuku</Link></li>
@@ -85,9 +87,9 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           </div>
 
           <div>
-            <h4 className="font-display text-sm tracking-[0.2em] text-gold-300">
+            <h2 className="font-display text-sm tracking-[0.2em] text-gold-300">
               İLETİŞİM
-            </h4>
+            </h2>
             <ul className="mt-5 space-y-4 text-sm text-stone-400">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
@@ -109,11 +111,11 @@ export default function Footer({ settings }: { settings: SiteSettings }) {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink-border pt-8 text-xs text-stone-500 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ink-border pt-8 text-xs text-stone-400 sm:flex-row">
           <p>&copy; {year} {settings.firmName}. Tüm hakları saklıdır.</p>
           <p className="tracking-wide">{settings.workingHours}</p>
         </div>
-        <p className="mt-4 text-center text-[11px] text-stone-600">
+        <p className="mt-4 text-center text-[11px] text-stone-400">
           Web sitesi <span className="text-gold-500">Osman Demiral</span> tarafından tasarlanıp geliştirilmiştir.
         </p>
       </Container>

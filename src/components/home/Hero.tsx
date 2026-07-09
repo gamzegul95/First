@@ -69,50 +69,27 @@ export default function Hero({
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-gold-400"
-          >
+          <p className="flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-gold-400">
             <span className="h-px w-9 bg-gradient-to-r from-gold-500 to-transparent" />
             {kicker}
-          </motion.p>
+          </p>
 
           <h1 className="mt-9 font-display text-5xl font-bold leading-[1.1] tracking-[-0.01em] text-foreground sm:text-6xl lg:text-[4.75rem]">
             {lines.map((line, i) => (
-              <span key={i} className="block overflow-hidden pb-1">
-                <motion.span
-                  initial={{ y: "105%" }}
-                  animate={{ y: "0%" }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.1 + i * 0.1,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className={i === lines.length - 1 ? "block text-gold-gradient" : "block"}
-                >
-                  {line}
-                </motion.span>
+              <span
+                key={i}
+                className={i === lines.length - 1 ? "block text-gold-gradient" : "block"}
+              >
+                {line}
               </span>
             ))}
           </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 max-w-xl text-lg font-light leading-[1.75] text-foreground/60"
-          >
+          <p className="mt-7 max-w-xl text-lg font-light leading-[1.75] text-foreground/60">
             {subtitle}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center"
-          >
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
             <LinkButton href="/iletisim" size="lg">
               {ctaLabel}
               <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
@@ -120,7 +97,7 @@ export default function Hero({
             <LinkButton href="/hizmetler" variant="outline" size="lg">
               Faaliyet Alanlarımız
             </LinkButton>
-          </motion.div>
+          </div>
         </div>
       </Container>
 

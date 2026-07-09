@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import "./card-fan-carousel.css";
 
@@ -291,7 +292,14 @@ export default function SocialCards({ cards }: SocialCardsProps) {
           {cards.map((card, index) => {
             const image = (
               <div className="relative w-full h-full overflow-hidden">
-                <img src={card.imgUrl} loading="lazy" alt={card.alt || `Card ${index}`} className="absolute inset-0 w-full h-full object-cover z-10" />
+                <Image
+                  src={card.imgUrl}
+                  alt={card.alt || `Card ${index}`}
+                  fill
+                  sizes="(max-width: 640px) 40vw, (max-width: 1024px) 20vw, 220px"
+                  loading="lazy"
+                  className="object-cover z-10"
+                />
                 {card.title && (
                   <div className="absolute inset-x-0 bottom-0 z-20 bg-gradient-to-t from-black/85 via-black/40 to-transparent pt-8 pb-2.5 px-2 sm:pb-3 sm:px-2.5">
                     <p className="text-white text-[11px] sm:text-sm md:text-base font-semibold leading-tight text-center drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
