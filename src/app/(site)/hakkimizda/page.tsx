@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Target, Eye } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Container from "@/components/ui/Container";
@@ -9,7 +8,7 @@ import SectionKicker from "@/components/ui/SectionKicker";
 import ProfilePhoto from "@/components/ui/ProfilePhoto";
 import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/structured-data";
-import { getAboutContent, getHomeContent, getLawyerProfile } from "@/lib/data";
+import { getAboutContent, getLawyerProfile } from "@/lib/data";
 
 const description =
   "AKKAYA HUKUK & DANIŞMANLIK'ın hikayesi, misyonu, vizyonu ve değerleri.";
@@ -22,9 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const [about, home, lawyer] = await Promise.all([
+  const [about, lawyer] = await Promise.all([
     getAboutContent(),
-    getHomeContent(),
     getLawyerProfile(),
   ]);
 
@@ -44,61 +42,6 @@ export default async function AboutPage() {
       />
 
       <section className="relative bg-ink-950 py-24">
-        <Container>
-          <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <Reveal className="relative">
-              <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-sm border border-ink-border bg-gradient-to-b from-ink-900 to-ink-950">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-[0.05]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #c2984f 1px, transparent 1px), linear-gradient(to bottom, #c2984f 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }}
-                />
-                <Image
-                  src="/logo-mark.png"
-                  alt="Akkaya Hukuk"
-                  width={280}
-                  height={430}
-                  className="h-64 w-auto animate-float opacity-90"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 hidden rounded-sm border border-gold-600/40 bg-ink-950 px-8 py-6 text-center shadow-2xl sm:block">
-                <p className="font-display text-3xl font-semibold text-gold-300">
-                  {home.stat1Value}
-                </p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-400">
-                  {home.stat1Label}
-                </p>
-              </div>
-            </Reveal>
-
-            <div>
-              <Reveal>
-                <SectionKicker>{about.storyTitle}</SectionKicker>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="mt-6 text-lg leading-relaxed text-stone-300">
-                  {about.storyBody}
-                </p>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <Link
-                  href="/makaleler"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-gold-400 transition-colors hover:text-gold-200"
-                >
-                  Makalelerimizi İnceleyin
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Reveal>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="relative bg-ink-950 pb-24">
         <Container>
           <Reveal>
             <Link
