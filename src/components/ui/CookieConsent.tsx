@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-
-const STORAGE_KEY = "akkaya-cerez-onayi";
+import { CONSENT_STORAGE_KEY, CONSENT_EVENT } from "@/lib/cookie-consent";
 
 export default function CookieConsent() {
-  const [visible, setVisible] = useState(() => !localStorage.getItem(STORAGE_KEY));
+  const [visible, setVisible] = useState(() => !localStorage.getItem(CONSENT_STORAGE_KEY));
 
   function decide(value: "accepted" | "rejected") {
-    localStorage.setItem(STORAGE_KEY, value);
+    localStorage.setItem(CONSENT_STORAGE_KEY, value);
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   }
 
@@ -24,8 +24,8 @@ export default function CookieConsent() {
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-5 sm:flex-row sm:justify-between">
         <p className="text-sm leading-relaxed text-stone-300">
-          Sitemizde deneyiminizi iyileştirmek için yalnızca zorunlu çerezler
-          kullanılmaktadır.{" "}
+          Sitemizde deneyiminizi iyileştirmek ve ziyaret istatistiklerini
+          ölçmek için çerezler kullanılmaktadır.{" "}
           <Link
             href="/gizlilik-ve-cerez-politikasi"
             className="text-gold-400 underline underline-offset-2 hover:text-gold-300"

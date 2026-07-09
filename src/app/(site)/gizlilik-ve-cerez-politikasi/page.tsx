@@ -41,15 +41,24 @@ export default async function PrivacyCookiePolicyPage() {
                 1. Çerez Kullanımı
               </h2>
               <p className="mt-4">
-                Web sitemiz, ziyaretçilerine daha iyi bir deneyim sunabilmek
-                amacıyla sınırlı sayıda çerez kullanır. Şu anda sitemizde
-                yalnızca teknik olarak zorunlu bir çerez bulunmaktadır: bu
-                çerez, yalnızca yönetim paneline giriş yapan yetkili
-                kullanıcının oturumunu güvenli şekilde yönetmek için
-                kullanılır ve ziyaretçi davranışını izlemez, üçüncü taraflarla
-                paylaşılmaz. Sitemizde şu an reklam, analiz veya pazarlama
-                amaçlı üçüncü taraf çerezleri kullanılmamaktadır.
+                Web sitemiz iki tür çerez kullanır:
               </p>
+              <ul className="mt-4 list-disc space-y-2 pl-5">
+                <li>
+                  <span className="text-stone-200">Zorunlu çerez:</span>{" "}
+                  yönetim paneline giriş yapan yetkili kullanıcının oturumunu
+                  güvenli şekilde yönetmek için kullanılır, ziyaretçi
+                  davranışını izlemez ve rıza gerektirmez.
+                </li>
+                <li>
+                  <span className="text-stone-200">Analitik çerez (Google Analytics):</span>{" "}
+                  yalnızca çerez bildirimini onaylamanız hâlinde etkinleşir;
+                  hangi sayfaların ziyaret edildiği gibi anonimleştirilmiş
+                  kullanım istatistiklerini toplamamıza yardımcı olur.
+                  Onayınızı &quot;Reddet&quot; seçeneğiyle geri çevirirseniz bu
+                  çerez hiç yüklenmez.
+                </li>
+              </ul>
             </div>
 
             <div>
