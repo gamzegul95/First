@@ -52,11 +52,8 @@ export default async function PrivacyCookiePolicyPage() {
                 </li>
                 <li>
                   <span className="text-stone-200">Analitik çerez (Google Analytics):</span>{" "}
-                  yalnızca çerez bildirimini onaylamanız hâlinde etkinleşir;
                   hangi sayfaların ziyaret edildiği gibi anonimleştirilmiş
                   kullanım istatistiklerini toplamamıza yardımcı olur.
-                  Onayınızı &quot;Reddet&quot; seçeneğiyle geri çevirirseniz bu
-                  çerez hiç yüklenmez.
                 </li>
               </ul>
             </div>

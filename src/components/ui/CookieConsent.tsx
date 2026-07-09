@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CONSENT_STORAGE_KEY, CONSENT_EVENT } from "@/lib/cookie-consent";
+import { CONSENT_STORAGE_KEY } from "@/lib/cookie-consent";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(() => !localStorage.getItem(CONSENT_STORAGE_KEY));
 
   function decide(value: "accepted" | "rejected") {
     localStorage.setItem(CONSENT_STORAGE_KEY, value);
-    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   }
 

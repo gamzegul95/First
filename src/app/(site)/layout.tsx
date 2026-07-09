@@ -4,7 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieConsent from "@/components/ui/CookieConsentLoader";
-import GoogleAnalytics from "@/components/ui/GoogleAnalyticsLoader";
+import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 import JsonLd from "@/components/seo/JsonLd";
 import { getSiteSettings } from "@/lib/data";
 import { SITE_URL } from "@/lib/site";
