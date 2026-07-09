@@ -1,0 +1,114 @@
+// Akkaya Hukuk & Danışmanlık — content schema
+// Vercel Postgres (Neon) üzerinde çalışır. DATABASE_URL, Vercel proje
+// ortam değişkenlerinden (Storage > Postgres) veya `vercel env pull` ile
+// yerel .env dosyanıza gelir.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Singleton row (id always 1) holding global firm info used across the site.
+model SiteSettings {
+  id              Int      @id @default(1)
+  firmName        String   @default("AKKAYA HUKUK & DANIŞMANLIK")
+  tagline         String   @default("Güven ve Uzmanlıkla Yanınızdayız")
+  metaDescription String   @default("Ankara merkezli AKKAYA HUKUK & DANIŞMANLIK; kurumsal, ticari ve bireysel hukuki danışmanlık hizmetleri sunar.")
+  phone           String   @default("+90 541 465 46 77")
+  whatsapp        String   @default("+90 532 000 00 00")
+  email           String   @default("info@akkayahukukdanismanlik.com")
+  address         String   @default("Korkutreis Mah. İlkiz Sok. No:18/16 Kat:4 Çankaya/Ankara")
+  workingHours    String   @default("Pazartesi - Cuma: 09:00 - 18:30")
+  mapEmbedUrl     String?
+  instagram       String?
+  linkedin        String?
+  updatedAt       DateTime @updatedAt
+}
+
+model HomeContent {
+  id            Int      @id @default(1)
+  heroKicker    String   @default("AKKAYA HUKUK & DANIŞMANLIK")
+  heroTitle     String   @default("Her Dosyada Strateji,\nHer Süreçte Güven")
+  heroSubtitle  String   @default("Bireysel ve kurumsal müvekkillerimize güvenilir, çözüm odaklı ve etkin hukuki hizmet sunuyoruz.")
+  heroCtaLabel  String   @default("Bize Ulaşın")
+  stat1Value    String   @default("8+")
+  stat1Label    String   @default("Yıllık Deneyim")
+  stat2Value    String   @default("1200+")
+  stat2Label    String   @default("Sonuçlanan Dava")
+  stat3Value    String   @default("%95")
+  stat3Label    String   @default("Müvekkil Memnuniyeti")
+  stat4Value    String   @default("7/24")
+  stat4Label    String   @default("Danışmanlık Erişimi")
+  whyUsTitle    String   @default("Neden Akkaya Hukuk?")
+  whyUsSubtitle String   @default("Her dosyaya butik bir yaklaşım, her müvekkile stratejik bir ortaklık sunuyoruz.")
+  whyUsItems    String   @default("[]")
+  updatedAt     DateTime @updatedAt
+}
+
+model AboutContent {
+  id            Int      @id @default(1)
+  kicker        String   @default("Hakkımızda")
+  title         String   @default("Güven ve Çözüm Odaklı Bir Hukuk Anlayışı")
+  intro         String   @default("AKKAYA HUKUK & DANIŞMANLIK, bireysel ve kurumsal müvekkillerine güvenilir, çözüm odaklı ve etkin hukuki hizmet sunmak amacıyla kurulmuştur. Hukukun üstünlüğü, meslek etiği, dürüstlük ve şeffaflık ilkelerini esas alan büromuz; her uyuşmazlığı kendi özel koşulları içerisinde değerlendirerek müvekkillerine en doğru hukuki çözümleri sunmayı hedeflemektedir.")
+  storyTitle    String   @default("Çalışma Anlayışımız")
+  storyBody     String   @default("Faaliyet alanlarımız arasında Miras Hukuku, Aile Hukuku, İş Hukuku, Ticaret Hukuku, Gayrimenkul Hukuku, İcra ve İflas Hukuku, Fikri ve Sınai Haklar Hukuku başta olmak üzere; dava takibi, hukuki danışmanlık, sözleşme hazırlama ve inceleme, icra işlemleri ve alternatif uyuşmazlık çözüm yöntemleri yer almaktadır.\nBüromuz, yalnızca ortaya çıkan hukuki uyuşmazlıkların çözümüne değil, aynı zamanda olası hukuki risklerin önceden tespit edilerek önlenmesine de önem vermektedir. Bu anlayış doğrultusunda müvekkillerimize hızlı, ulaşılabilir ve sürdürülebilir hukuki destek sunuyor; her aşamada şeffaf iletişim ve güven esasına dayalı bir çalışma ilişkisi kurmayı amaçlıyoruz.")
+  missionTitle  String   @default("Misyonumuz")
+  missionBody   String   @default("Müvekkillerimizin haklarını en üst düzeyde koruyarak, şeffaf ve stratejik bir hukuki danışmanlık deneyimi sunmak.")
+  visionTitle   String   @default("Vizyonumuz")
+  visionBody    String   @default("Müvekkillerimize her aşamada ulaşılabilir, şeffaf ve sürdürülebilir bir hukuki destek sunmaya devam etmek.")
+  values        String   @default("[]")
+  updatedAt     DateTime @updatedAt
+}
+
+// Singleton row holding the founding lawyer's public profile / CV content.
+model LawyerProfile {
+  id              Int      @id @default(1)
+  name            String   @default("Av. Arb. Gamze Gül Akkaya")
+  title           String   @default("Avukat")
+  photoUrl        String?
+  bio             String   @default("Av. Arb. Gamze Gül Akkaya, 2017 yılında İstanbul Üniversitesi Hukuk Fakültesi'nden mezun olmuş, 2018 yılında avukatlık ruhsatını alarak mesleki hayatına başlamıştır.\nMeslek hayatına İstanbul'da başlayan Av. Gamze Gül Akkaya, edindiği mesleki tecrübeyi bugün Ankara'da kurucusu olduğu AKKAYA HUKUK & DANIŞMANLIK bünyesinde sürdürmektedir.\nAvukatlık mesleğini icra ettiği süre boyunca gerçek ve tüzel kişilere hukuki danışmanlık, dava takibi ve uyuşmazlık çözümü alanlarında hizmet vermiş; özellikle Miras Hukuku, Aile Hukuku, İş Hukuku, Ticaret Hukuku, Gayrimenkul Hukuku, İcra ve İflas Hukuku, Fikri ve Sınai Haklar Hukuku alanlarında yoğunlaşmıştır.\nBunun yanında, İş Hukuku, Ticaret Hukuku ve Fikri ve Sınai Haklar Hukuku Uzman Arabulucu olarak faaliyet göstermekte; uyuşmazlıkların dava yoluna başvurulmadan, hızlı, etkin ve kalıcı çözümlerle sonuçlandırılmasına katkı sağlamaktadır. Arabuluculuk süreçlerinde tarafların menfaatlerini gözeten, iletişimi güçlendiren ve sürdürülebilir çözümler üreten bir yaklaşım benimsemektedir.\nHer hukuki uyuşmazlığın kendine özgü dinamiklere sahip olduğu bilinciyle hareket eden Av. Gamze Gül Akkaya, müvekkilleriyle güvene dayalı, şeffaf ve ulaşılabilir bir iletişim kurmayı temel ilke olarak benimsemektedir. Güncel mevzuat, yüksek yargı kararları ve doktrindeki gelişmeleri yakından takip ederek hukuki hizmetlerini sürekli geliştirmekte; her dosyada titiz, özenli ve sonuç odaklı bir çalışma anlayışıyla hareket etmektedir.")
+  languages       String   @default("Türkçe, İngilizce")
+  specializations String   @default("[\"Miras Hukuku\",\"Aile Hukuku\",\"İş Hukuku\",\"Ticaret Hukuku\",\"Gayrimenkul Hukuku\",\"İcra ve İflas Hukuku\",\"Fikri ve Sınai Haklar Hukuku\"]")
+  certifications  String   @default("[\"İş Hukuku Uzman Arabuluculuk Eğitimi\",\"Ticaret Hukuku Uzman Arabuluculuk Eğitimi\",\"Fikri ve Sınai Haklar Hukuku Uzman Arabuluculuk Eğitimi\"]")
+  updatedAt       DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  summary     String
+  description String
+  icon        String   @default("Scale")
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Article {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  summary       String
+  content       String
+  coverImageUrl String?
+  order         Int      @default(0)
+  publishedAt   DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

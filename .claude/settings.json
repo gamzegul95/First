@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tasklist)",
+      "Bash(npx prisma *)",
+      "Bash(git check-ignore *)",
+      "Bash(taskkill //PID 27824 //F)",
+      "Bash(curl -s -o /tmp/home.html -w \"status=%{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -sS -m 15 -o /tmp/home.html -w \"STATUS=%{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(echo \"curl exit=$?\")",
+      "Bash(curl -s http://localhost:3001/hizmetler)",
+      "Bash(curl -s http://localhost:3001/makaleler)",
+      "Bash(curl -s -o /dev/null -w \"admin_login=%{http_code}\\\\n\" http://localhost:3001/admin/login)",
+      "Bash(curl -s -o /dev/null -w \"hakkimizda=%{http_code}\\\\n\" http://localhost:3001/hakkimizda)",
+      "Bash(curl -s -o /dev/null -w \"avukat=%{http_code}\\\\n\" http://localhost:3001/hakkimizda/avukat)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"next dev\")"
+    ]
+  }
+}
