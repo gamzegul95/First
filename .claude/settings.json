@@ -14,7 +14,20 @@
       "Bash(curl -s -o /dev/null -w \"hakkimizda=%{http_code}\\\\n\" http://localhost:3001/hakkimizda)",
       "Bash(curl -s -o /dev/null -w \"avukat=%{http_code}\\\\n\" http://localhost:3001/hakkimizda/avukat)",
       "Bash(kill %1)",
-      "Bash(pkill -f \"next dev\")"
+      "Bash(pkill -f \"next dev\")",
+      "Bash(grep -E \"^\\\\.env$|^\\\\.env\\\\.\")",
+      "Bash(rm -rf .next)",
+      "Bash(npx next *)",
+      "WebFetch(domain:first-git-master-akkaya-hukuk-danismanlik.vercel.app)",
+      "WebFetch(domain:akkayahukukdanismanlik.com)",
+      "Bash(curl -sS -D - -o /tmp/domain_response.html \"https://akkayahukukdanismanlik.com/\" -m 20)",
+      "Bash(nslookup akkayahukukdanismanlik.com)",
+      "Bash(nslookup www.akkayahukukdanismanlik.com)",
+      "Bash(curl -sS -D - -o /tmp/deploy_direct.html \"https://first-nmhynbz5m-akkaya-hukuk-danismanlik.vercel.app/\" -m 20)",
+      "Bash(curl -sS -D - -o /tmp/domain_retest.html \"https://akkayahukukdanismanlik.com/\" -m 20)",
+      "Bash(curl -sS -D - -o /tmp/pearl_test.html \"https://first-ten-pearl.vercel.app/\" -m 20)",
+      "Bash(git mv *)",
+      "Bash(mv src/middleware.ts src/proxy.ts)"
     ]
   }
 }
