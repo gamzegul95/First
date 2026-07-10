@@ -59,10 +59,11 @@ export async function generateMetadata(): Promise<Metadata> {
       description: settings.metaDescription,
       images: [{ url: "/og-image.png", width: 1200, height: 630, alt: settings.firmName }],
     },
+    // No title/description here on purpose: leaving them unset lets Twitter's
+    // crawler fall back to each page's own og:title/og:description instead of
+    // showing this site-wide default on every shared link.
     twitter: {
       card: "summary_large_image",
-      title,
-      description: settings.metaDescription,
       images: ["/og-image.png"],
     },
     robots: {
